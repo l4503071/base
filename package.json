@@ -1,0 +1,30 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "run": "webpack-server-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l4503071/base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/l4503071/base/issues"
+  },
+  "homepage": "https://github.com/l4503071/base#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "webpack-cli": "^2.0.15"
+  },
+  "dependencies": {
+    "webpack": "^4.6.0"
+  }
+}
