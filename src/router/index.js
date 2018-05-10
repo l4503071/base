@@ -3,8 +3,10 @@ import Home from '@/component/Home'
 import Other from '@/component/Other'
 import Detail1 from '@/component/detail/Detail1'
 import Detail2 from '@/component/detail/Detail2'
+import Detail3 from '@/component/detail/Detail3'
 import Echarts from '@/component/Echarts'
 import Echarts1 from '@/component/echarts/Echarts1'
+import Echarts2 from '@/component/echarts/Echarts2'
 const routes = [{
     path: '/home',
     name: 'home',
@@ -17,6 +19,10 @@ const routes = [{
         path: 'detail2',
         name: 'detail2',
         component:Detail2
+    },{
+        path: 'detail3',
+        name: 'detail3',
+        component:Detail3
     }]
 	}, {
     path: '/echarts',
@@ -26,6 +32,10 @@ const routes = [{
         path: 'echarts1',
         name: 'echarts1',
         component:Echarts1
+    },{
+        path: 'echarts2',
+        name: 'echarts2',
+        component:Echarts2
     }]
     },{
 	    path: '/other',

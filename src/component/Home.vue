@@ -24,6 +24,9 @@
 					},{
 						id:2,
 						name:'echarts图表大小自适应'
+					},{
+						id:3,
+						name:'echarts双轴拖动'
 					}
 
 				]

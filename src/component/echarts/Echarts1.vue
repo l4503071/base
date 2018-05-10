@@ -57,7 +57,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.echarts-container {
 		height: 100%;
 		padding-left: 16px;

@@ -21,6 +21,9 @@
 					{
 						id:1,
 						name:'echarts自适应'
+					},{
+						id:2,
+						name:'echarts双轴拖动'
 					}
 				]
 			};
