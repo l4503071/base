@@ -1,7 +1,7 @@
 <template>
 	<div class="detail-container">
 		<h4 class="title">
-			Sublime Text 3.0安装SublimeServer
+			Echarts图标大小自适应
 		</h4>
 		<div class="dc__content">
 			<div>
