@@ -19,6 +19,9 @@
 					path:'/home',
 					name:'home'
 				},{
+					path:'/echarts',
+					name:'echarts'
+				},{
 					path:'/other',
 					name:'other'
 				}]

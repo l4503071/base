@@ -3,7 +3,7 @@
 		<div class="left">
 			<h4 v-text="title" v-once></h4>
 			<ul>
-				<router-link v-for="list in lists" :to="{name:'detail'+list.id}" :key="list.id" active-class="active" tag="li">{{list.name}}</router-link>
+				<router-link v-for="list in lists" :to="{name:'echarts'+list.id}" :key="list.id" active-class="active" tag="li">{{list.name}}</router-link>
 			</ul>
 		</div>
 		<div class="right">
@@ -20,7 +20,7 @@
 				lists:[
 					{
 						id:1,
-						name:'Sublime Text 3.0安装SublimeServer'
+						name:'echarts自适应'
 					}
 				]
 			};

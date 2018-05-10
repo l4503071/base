@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --inline"
+    "build": "webpack --env.NODE_ENV=production --progress --hide-modules",
+    "dev": "webpack-dev-server --env.NODE_ENV=development --open --hot"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,11 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "vue": "^2.5.16",
     "vue-loader": "^15.0.4",
     "vue-router": "^3.0.1",
@@ -35,6 +37,9 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
+    "css-element-queries": "^1.0.2",
+    "echarts": "^4.1.0",
+    "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
     "webpack": "^4.6.0"
   }
