@@ -16,7 +16,7 @@
 	export default {
 		data(){
 			return {
-				title:'文章列表：',
+				title:'子模块：',
 				lists:[
 					{
 						id:1,

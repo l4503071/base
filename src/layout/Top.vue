@@ -2,7 +2,7 @@
 	<div class="top-container">
 		<div class="header-container">
 			<div v-for="list in lists" class="header-item">
-				<router-link :to="{name:list.name}" tag="span" active-class="active">{{list.name}}</router-link>
+				<router-link :to="{name:list.name}" tag="span" active-class="active">{{list.title}}</router-link>
 			</div>
 		</div>
 		<div class="content-container">
@@ -17,13 +17,16 @@
 			return {
 				lists:[{
 					path:'/home',
-					name:'home'
+					name:'home',
+					title:'文章'
 				},{
 					path:'/echarts',
-					name:'echarts'
+					name:'echarts',
+					title:'echarts模块'
 				},{
 					path:'/other',
-					name:'other'
+					name:'other',
+					title:'其他'
 				}]
 			};
 		}

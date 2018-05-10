@@ -1,7 +1,8 @@
 import VueRouter from 'vue-router'
 import Home from '@/component/Home'
 import Other from '@/component/Other'
-import Detail1 from '@/component/Detail1'
+import Detail1 from '@/component/detail/Detail1'
+import Detail2 from '@/component/detail/Detail2'
 import Echarts from '@/component/Echarts'
 import Echarts1 from '@/component/echarts/Echarts1'
 const routes = [{
@@ -12,6 +13,10 @@ const routes = [{
         path: 'detail1',
         name: 'detail1',
         component:Detail1
+    },{
+        path: 'detail2',
+        name: 'detail2',
+        component:Detail2
     }]
 	}, {
     path: '/echarts',

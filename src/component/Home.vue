@@ -21,7 +21,11 @@
 					{
 						id:1,
 						name:'Sublime Text 3.0安装SublimeServer'
+					},{
+						id:2,
+						name:'echarts图表大小自适应'
 					}
+
 				]
 			};
 		}
@@ -46,6 +50,19 @@
 		list-style: none;
 		padding-left: 8px;
 		cursor: pointer;
+	}
+	div.left > ul > li {
+		margin-bottom: 8px;
+	}
+	div.left > ul > li:before {
+		content: "\A0";
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: black;
+		display: inline-block;
+		line-height: 8px;
+		margin-right: 8px;
 	}
 	div.left > ul > li.active {
 		color:darkblue;

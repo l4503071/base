@@ -4,10 +4,13 @@
 			Echarts自适应
 		</h4>
 		<p>
-			拖动边框右下角的小三角，echarts图表大小会随之发生改变
+			拖动边框右下角的小三角，echarts图表大小会随之发生改变。<button @click="toDetail">详情</button>
+		</p>
+		<p>
+			拖动插件为 css-element-queries，参考网址：<a href="https://github.com/marcj/css-element-queries" target="__blank">https://github.com/marcj/css-element-queries</a>
 		</p>
 		<div class="ec__content" id="main-container">
-			<div id="main" @></div>
+			<div id="main"></div>
 		</div>
 	</div>
 </template>
@@ -45,6 +48,11 @@
 				    data: [5, 20, 36, 10, 10, 20]
 				}]
 			});
+		},
+		methods:{
+			toDetail(){
+				this.$router.push({name:'detail2'});
+			}
 		}
 	}
 </script>
