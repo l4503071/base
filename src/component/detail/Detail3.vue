@@ -9,11 +9,11 @@
 				1.创建多个xAxis
 			</p>
 			<p>
-				2.在每个xAxis轴中分别绑定一个axisPointer
+				2.在每个xAxis轴中分别添加一个axisPointer
 			</p>
 			<p>
 				<em>注意：</em>
-				需要同时指定tooltip:{triggerOn:'axis'}，否则鼠标进去图标中，不点击轴也会随坐标轴移动。
+				需要同时指定tooltip:{triggerOn:'axis'}，否则鼠标进入图表后，不点击鼠标，双轴也会随鼠标移动。
 			</p>
 			<p>
 				参考：
