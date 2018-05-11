@@ -27,7 +27,7 @@
 				this.data.push([index,Math.random()*10]);
 				xData.push(index);
 			}
-			var dragOption={
+			var dragOptionOne={
 				type:'category',
 				axisLine:{
                     show: false
@@ -54,8 +54,8 @@
 		                show: true,
 		                backgroundColor: '#004E52',
 		                formatter: function (params) {
-                            return parseFloat($self.data[parseInt(params.value)]).toFixed(2);
-                        },
+                            return parseFloat($self.data[parseInt(params.value)][1]).toFixed(2);
+                        }
 		            },
 		            handle: {
 		                show: true,
@@ -69,6 +69,11 @@
 		        },
 		        data:xData
 			};
+			var dragOptionTwo=JSON.parse(JSON.stringify(dragOptionOne));
+			dragOptionTwo.axisPointer.value=10;
+			dragOptionTwo.axisPointer.label.formatter=function (params) {
+                return parseFloat($self.data[parseInt(params.value)][1]).toFixed(2);
+            }
 
 			var myChart = echarts.init(document.getElementById('main'));
 			myChart.setOption({
@@ -81,8 +86,8 @@
 				xAxis: [{
 					type:'category'
 				},
-				{...dragOption,...{axisPointer:{value:10}}},
-				{...dragOption}
+				dragOptionOne,
+				dragOptionTwo
 				],
 				yAxis: {},
 				series: [{
