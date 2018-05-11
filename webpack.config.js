@@ -17,7 +17,6 @@ module.exports = env=>{
             alias: {
                 '@': path.resolve(__dirname, 'src'),
                 'vue$': env.NODE_ENV=='production'?'vue/dist/vue.runtime.common.js':'vue/dist/vue.js'
-                
             }
         },
         module: {
