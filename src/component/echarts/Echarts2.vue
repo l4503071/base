@@ -4,7 +4,7 @@
 			Echarts双轴拖动
 		</h4>
 		<p>
-			。。。<button @click="toDetail">详情</button>
+			echarts官网给出的例子只包有一个拖动轴，实现多个拖动轴需要创建多个x轴。<button @click="toDetail">详情</button>
 		</p>
 		<div class="ec__content" id="main-container">
 			<div id="main"></div>

@@ -1,29 +1,29 @@
 <template>
 	<div class="detail-container">
 		<h4 class="title">
-			Echarts图标大小自适应
+			Echarts双轴拖动
 		</h4>
 		<div class="dc__content">
 			<span>思路：</span>
 			<p>
-				1.echarts实例(id="main")的标签外层需要包括一层宽高自适应的标签；
+				1.创建多个xAxis
 			</p>
 			<p>
-				2.echarts实例标签的宽高需要指定为100%；
+				2.在每个xAxis轴中分别绑定一个axisPointer
 			</p>
 			<p>
-				3.监测外层标签的resize时间，调用echarts实例的resize方法;
+				<em>注意：</em>
+				需要同时指定tooltip:{triggerOn:'axis'}，否则鼠标进去图标中，不点击轴也会随坐标轴移动。
 			</p>
 			<p>
-				4.如果需要进一步控制echarts图标的自适应，请使用media配置项，参考：
-				<a href="http://echarts.baidu.com/tutorial.html#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E9%80%82%E5%BA%94" target="__blank">点击</a>
+				参考：
+				<a href="http://echarts.baidu.com/examples/editor.html?c=line-tooltip-touch" target="__blank">点击</a>
 			</p>
 		</div>
 	</div>
 </template>
 
 <script>
-
 	export default {
 		data(){
 			return {
