@@ -1,0 +1,181 @@
+
+.top-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.header-container {
+	height: 50px;
+	background-color: #555;
+	display: flex;
+}
+.header-item {
+	width: 100px;
+	text-align: center;
+}
+.header-item>span {
+	color: white;
+	line-height: 50px;
+}
+.header-item>span.active {
+	color:red;
+}
+.header-item>span:hover {
+	cursor: pointer;
+}
+.content-container {
+	flex: 1;
+}
+
+
+
+
+.footer-container[data-v-8e5606d2] {
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	font-style: italic;
+}
+
+
+.container[data-v-04c2046b] {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.container > div.top[data-v-04c2046b] {
+	flex:1;
+}
+.container > div.bottom[data-v-04c2046b] {
+	height: 50px;
+	background-color: #d2d2d2;
+}
+
+
+.home-container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+.home-container > div.left {
+	width: 300px;
+	height: 100%;
+	background-color: #a5a5a7;
+}
+div.left > h4 {
+	margin-left: 8px;
+}
+div.left > ul {
+	list-style: none;
+	padding-left: 8px;
+	cursor: pointer;
+}
+div.left > ul > li {
+	margin-bottom: 8px;
+}
+div.left > ul > li:before {
+	content: "\A0";
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: black;
+	display: inline-block;
+	line-height: 8px;
+	margin-right: 8px;
+}
+div.left > ul > li.active {
+	color:darkblue;
+}
+.home-container > div.right {
+	height: 100%;
+	flex: 1;
+}
+
+
+.other-container {
+		height: 100%;
+		display: flex;
+    	align-items: center;
+	    justify-content: space-around;
+}
+.other-container>p{
+		font-size:30px;
+}
+
+
+.detail-container {
+	height: 100%;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+
+.detail-container {
+	height: 100%;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.dc__content {
+	position: relative;
+}
+.dcc__article {
+	position: absolute;
+	right: 0;
+	top:0;
+	width: 300px;
+	height: 300px;
+	border: 1px darkblue dashed;
+}
+
+
+.detail-container {
+	height: 100%;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.dc__content {
+	position: relative;
+}
+.dcc__article {
+	position: absolute;
+	right: 0;
+	top:0;
+	width: 300px;
+	height: 300px;
+	border: 1px darkblue dashed;
+}
+
+
+.home-container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+.home-container > div.left {
+	width: 300px;
+	height: 100%;
+	background-color: #a5a5a7;
+}
+div.left > h4 {
+	margin-left: 8px;
+}
+div.left > ul {
+	list-style: none;
+	padding-left: 8px;
+	cursor: pointer;
+}
+div.left > ul > li.active {
+	color:darkblue;
+}
+.home-container > div.right {
+	height: 100%;
+	flex: 1;
+}
+
+
+
+/*# sourceMappingURL=style.css.map*/
