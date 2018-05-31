@@ -10,7 +10,7 @@
 			拖动插件为 css-element-queries，参考网址：<a href="https://github.com/marcj/css-element-queries" target="__blank">https://github.com/marcj/css-element-queries</a>
 		</p>
 		<div class="ec__content" id="main-container">
-			<div id="main"></div>
+			<div id="main" v-loading="loading" element-loading-text="拼命加载中"></div>
 		</div>
 	</div>
 </template>
@@ -21,9 +21,11 @@
 	export default {
 		data(){
 			return {
+				loading:true
 			};
 		},
 		mounted(){
+			let _self=this;
 			require.ensure([], function(require){
 				const echarts=require('echarts');
 			    ElementQueries.listen();
@@ -49,6 +51,7 @@
 					    data: [5, 20, 36, 10, 10, 20]
 					}]
 				});
+				_self.loading=false;
 			},'echarts');
 		},
 		methods:{

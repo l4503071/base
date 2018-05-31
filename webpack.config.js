@@ -50,13 +50,17 @@ module.exports = env=>{
                 test: /\.css$/,
                 use: [ MiniCssExtractPlugin.loader,'css-loader']
             },{
-                 test: /\.(png|jpg|gif)$/,
+                 test: /\.(png|jpg|gif|svg)$/,
                  use: [{
                     loader: 'url-loader',
                     options: {
                        limit: 8192
                     }
                 }]
+            },{
+                test: /\.(eot|woff|ttf|woff2|)(\?|$)/,
+                exclude: /^node_modules$/,
+                loader: 'file-loader?name=[name].[ext]'
             }]
         },
         devtool: env.NODE_ENV=='production'?'#cheap-module-source-map':'cheap-module-eval-source-map',
@@ -88,7 +92,8 @@ module.exports = env=>{
             })
         ],
         externals:{
-            jquery:'jQuery'
+            jquery:'jQuery',
+
         }
     };
 }

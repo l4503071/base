@@ -7,7 +7,7 @@
 			echarts官网给出的例子只包有一个拖动轴，实现多个拖动轴需要创建多个x轴。<button @click="toDetail">详情</button>
 		</p>
 		<div class="ec__content" id="main-container">
-			<div id="main"></div>
+			<div id="main" v-loading="loading" element-loading-text="拼命加载中"></div>
 		</div>
 	</div>
 </template>
@@ -16,9 +16,11 @@
 	export default {
 		data(){
 			return {
+				loading:true
 			};
 		},
 		mounted(){
+			let _self=this;
 			require.ensure([], function(require){
 				const echarts=require('echarts');
 				var xData=[],
@@ -95,7 +97,9 @@
 					    data: data
 					}]
 				});
+
 			},'echarts');
+			_self.loading=false;
 		},
 		methods:{
 			toDetail(){
