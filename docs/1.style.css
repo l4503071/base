@@ -1,0 +1,20 @@
+
+.echarts-container[data-v-74bcde3e] {
+	height: 100%;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.ec__content[data-v-74bcde3e] {
+	resize: both;
+	overflow: hidden;
+	padding-bottom: 5px;
+	border: 1px dashed lightpink;
+	height: 300px;
+}
+#main[data-v-74bcde3e] {
+	height: 100%;
+	width: 100%;
+}
+
+
+/*# sourceMappingURL=1.style.css.map*/

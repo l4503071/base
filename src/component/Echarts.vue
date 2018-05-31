@@ -7,7 +7,9 @@
 			</ul>
 		</div>
 		<div class="right">
-			<router-view name="default"></router-view>
+			<!-- <keep-alive> -->
+				<router-view></router-view>
+			<!-- </keep-alive> -->
 		</div>
 	</div>
 </template>

@@ -13,88 +13,89 @@
 </template>
 
 <script>
-	const echarts=require('echarts');
 	export default {
 		data(){
 			return {
-				data:[]
 			};
 		},
 		mounted(){
-			var $self=this;
-			var xData=[];
-			for(let index=0;index<100;index++){
-				this.data.push([index,Math.random()*10]);
-				xData.push(index);
-			}
-			var dragOptionOne={
-				type:'category',
-				axisLine:{
-                    show: false
-                },
-                axisTick:{
-                    show: false
-                },
-                axisLabel:{
-                    show: false
-                },
-                splitLine:{
-                    show:false
-                },
-                position:'bottom',
-				axisPointer: {
-		            value: 50,
-		            snap: true,
-		            lineStyle: {
-		                color: '#004E52',
-		                opacity: 0.5,
-		                width: 2
+			require.ensure([], function(require){
+				const echarts=require('echarts');
+				var xData=[],
+					data=[];
+				for(let index=0;index<100;index++){
+					data.push([index,Math.random()*10]);
+					xData.push(index);
+				}
+				var dragOptionOne={
+					type:'category',
+					axisLine:{
+		                show: false
 		            },
-		            label: {
-		                show: true,
-		                backgroundColor: '#004E52',
-		                formatter: function (params) {
-                            return parseFloat($self.data[parseInt(params.value)][1]).toFixed(2);
-                        }
+		            axisTick:{
+		                show: false
 		            },
-		            handle: {
-		                show: true,
-		                color: '#004E52',
-		                size:30,
-		                margin:40
-		            }
-		        },
-		        splitLine: {
-		            show: false
-		        },
-		        data:xData
-			};
-			var dragOptionTwo=JSON.parse(JSON.stringify(dragOptionOne));
-			dragOptionTwo.axisPointer.value=10;
-			dragOptionTwo.axisPointer.label.formatter=function (params) {
-                return parseFloat($self.data[parseInt(params.value)][1]).toFixed(2);
-            }
+		            axisLabel:{
+		                show: false
+		            },
+		            splitLine:{
+		                show:false
+		            },
+		            position:'bottom',
+					axisPointer: {
+			            value: 50,
+			            snap: true,
+			            lineStyle: {
+			                color: '#004E52',
+			                opacity: 0.5,
+			                width: 2
+			            },
+			            label: {
+			                show: true,
+			                backgroundColor: '#004E52',
+			                formatter: function (params) {
+		                        return parseFloat(data[parseInt(params.value)][1]).toFixed(2);
+		                    }
+			            },
+			            handle: {
+			                show: true,
+			                color: '#004E52',
+			                size:30,
+			                margin:40
+			            }
+			        },
+			        splitLine: {
+			            show: false
+			        },
+			        data:xData
+				};
+				var dragOptionTwo=JSON.parse(JSON.stringify(dragOptionOne));
+				dragOptionTwo.axisPointer.value=10;
+				dragOptionTwo.axisPointer.label.formatter=function (params) {
+		            return parseFloat(data[parseInt(params.value)][1]).toFixed(2);
+		        }
 
-			var myChart = echarts.init(document.getElementById('main'));
-			myChart.setOption({
-				title: {
-				    text: 'ECharts 自适应'
-				},
-				tooltip:{
-                    triggerOn:'axis'
-                },
-				xAxis: [{
-					type:'category'
-				},
-				dragOptionOne,
-				dragOptionTwo
-				],
-				yAxis: {},
-				series: [{
-				    type: 'line',
-				    data: this.data
-				}]
-			});
+				var myChart = echarts.init(document.getElementById('main'));
+				myChart.setOption({
+					title: {
+					    text: 'ECharts 自适应'
+					},
+					tooltip:{
+		                triggerOn:'axis'
+		            },
+					xAxis: [{
+						type:'category'
+					},
+					dragOptionOne,
+					dragOptionTwo
+					],
+					yAxis: {},
+					series: [{
+					    type: 'line',
+					    data: data
+					}]
+				});
+			},'echarts');
 		},
 		methods:{
 			toDetail(){

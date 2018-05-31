@@ -16,7 +16,6 @@
 </template>
 
 <script>
-	const echarts=require('echarts');
 	const ElementQueries=require('css-element-queries/src/ElementQueries');
 	const ResizeSensor=require('css-element-queries/src/ResizeSensor');
 	export default {
@@ -25,29 +24,32 @@
 			};
 		},
 		mounted(){
-			ElementQueries.listen();
-			ElementQueries.init();
-			const mainContainer=document.getElementById('main-container');
-			var myChart = echarts.init(document.getElementById('main'));
-			new ResizeSensor(mainContainer,function(){
-				myChart.resize({
+			require.ensure([], function(require){
+				const echarts=require('echarts');
+			    ElementQueries.listen();
+				ElementQueries.init();
+				const mainContainer=document.getElementById('main-container');
+				var myChart = echarts.init(document.getElementById('main'));
+				new ResizeSensor(mainContainer,function(){
+					myChart.resize({
+					});
 				});
-			});
-			myChart.setOption({
-				title: {
-				    text: 'ECharts 自适应'
-				},
-				tooltip: {},
-				xAxis: {
-				    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-				},
-				yAxis: {},
-				series: [{
-				    name: '销量',
-				    type: 'bar',
-				    data: [5, 20, 36, 10, 10, 20]
-				}]
-			});
+				myChart.setOption({
+					title: {
+					    text: 'ECharts 自适应'
+					},
+					tooltip: {},
+					xAxis: {
+					    data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+					},
+					yAxis: {},
+					series: [{
+					    name: '销量',
+					    type: 'bar',
+					    data: [5, 20, 36, 10, 10, 20]
+					}]
+				});
+			},'echarts');
 		},
 		methods:{
 			toDetail(){

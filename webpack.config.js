@@ -1,16 +1,35 @@
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebapckPlugin = require('clean-webpack-plugin');
 const HtmlWebapckPlugin = require('html-webpack-plugin');
+const CopyWebapckPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = env=>{
     return {
         mode:env.NODE_ENV,
-        entry: './main.js',
+        entry: {
+            app: './main.js',
+            vendor:['vue','vue-router']
+        },
         output: {
             path: path.resolve(__dirname, 'docs'),
-            filename: 'index.js'
+            filename: '[name].js',
+            chunkFilename:'[name].js'
+        },
+        optimization:{
+            splitChunks:{
+                chunks: 'initial',
+                cacheGroups: {
+                    vendor:{
+                        test: /node_modules\//,
+                        name: '/vendor',
+                        priority: 10,
+                        enforce: true
+                    }
+                }
+            }
         },
         resolve: {
             extensions: ['*', '.js', '.css', '.vue','.json'],
@@ -29,7 +48,7 @@ module.exports = env=>{
                 exclude: /node_modules/
             }, {
                 test: /\.css$/,
-                use: ['vue-style-loader','css-loader']
+                use: [ MiniCssExtractPlugin.loader,'css-loader']
             },{
                  test: /\.(png|jpg|gif)$/,
                  use: [{
@@ -47,10 +66,18 @@ module.exports = env=>{
             port:8080
         },
         plugins: [
+            new CleanWebapckPlugin([path.resolve(__dirname,'docs')]),
             new HtmlWebapckPlugin({
                 filename: 'index.html',
-                template: 'index.html'
+                template: 'index.html',
+                favicon: path.resolve(__dirname,'image','logo.png')
             }),
+            new CopyWebapckPlugin([
+            {
+                from: path.resolve(__dirname,'node_modules','jquery/dist','jquery.min.js'),
+                to: 'externals'
+            }
+            ]),
             new VueLoaderPlugin(),
             new MiniCssExtractPlugin({
                 filename: 'style.css'
@@ -59,6 +86,9 @@ module.exports = env=>{
                 $: 'jquery',
                 jQuery: 'jquery'
             })
-        ]
+        ],
+        externals:{
+            jquery:'jQuery'
+        }
     };
 }
