@@ -76,7 +76,6 @@ module.exports = env=>{
                        name:'fonts/[name].[hash:7].[ext]'
                     }
                 }]
-                // loader: 'file-loader?name=[name].[ext]'
             }]
         },
         devtool: env.NODE_ENV=='production'?'#cheap-module-source-map':'cheap-module-eval-source-map',
@@ -109,7 +108,6 @@ module.exports = env=>{
         ],
         externals:{
             jquery:'jQuery',
-
         }
     };
 }
