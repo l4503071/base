@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanWebapckPlugin = require('clean-webpack-plugin');
 const HtmlWebapckPlugin = require('html-webpack-plugin');
 const CopyWebapckPlugin = require('copy-webpack-plugin');
+const UglifyJsWebapckPlugin=require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -29,7 +30,14 @@ module.exports = env=>{
                         enforce: true
                     }
                 }
-            }
+            },
+            minimizer:[
+                new UglifyJsWebapckPlugin({
+                    uglifyOptions:{
+                        compress:false
+                    }
+                })
+            ]
         },
         resolve: {
             extensions: ['*', '.js', '.css', '.vue','.json'],
@@ -50,17 +58,25 @@ module.exports = env=>{
                 test: /\.css$/,
                 use: [ MiniCssExtractPlugin.loader,'css-loader']
             },{
-                 test: /\.(png|jpg|gif|svg)$/,
-                 use: [{
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [{
                     loader: 'url-loader',
                     options: {
-                       limit: 8192
+                       limit: 8192,
+                       name:'images/[name].[hash:7].[ext]'
                     }
                 }]
             },{
-                test: /\.(eot|woff|ttf|woff2|)(\?|$)/,
+                test: /\.(eot|woff|ttf|woff2|otf)$/,
                 exclude: /^node_modules$/,
-                loader: 'file-loader?name=[name].[ext]'
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                       limit: 8192,
+                       name:'fonts/[name].[hash:7].[ext]'
+                    }
+                }]
+                // loader: 'file-loader?name=[name].[ext]'
             }]
         },
         devtool: env.NODE_ENV=='production'?'#cheap-module-source-map':'cheap-module-eval-source-map',
