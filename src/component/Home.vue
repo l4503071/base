@@ -27,6 +27,9 @@
 					},{
 						id:3,
 						name:'echarts双轴拖动'
+					},{
+						id:4,
+						name:'Mac下使用命令行启动Sublime'
 					}
 
 				]

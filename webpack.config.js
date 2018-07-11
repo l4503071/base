@@ -25,7 +25,7 @@ module.exports = env=>{
                 cacheGroups: {
                     vendor:{
                         test: /node_modules\//,
-                        name: '/vendor',
+                        name: 'vendor',
                         priority: 10,
                         enforce: true
                     }
