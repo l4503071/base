@@ -5,6 +5,7 @@ import Detail1 from '@/component/detail/Detail1'
 import Detail2 from '@/component/detail/Detail2'
 import Detail3 from '@/component/detail/Detail3'
 import Detail4 from '@/component/detail/Detail4'
+import Detail5 from '@/component/detail/Detail5'
 import Echarts from '@/component/Echarts'
 // import Echarts1 from '@/component/echarts/Echarts1'
 // import Echarts2 from '@/component/echarts/Echarts2'
@@ -28,6 +29,10 @@ const routes = [{
         path: 'detail4',
         name: 'detail4',
         component:Detail4
+    },{
+        path: 'detail5',
+        name: 'detail5',
+        component:Detail5
     }]
 	}, {
     path: '/echarts',
